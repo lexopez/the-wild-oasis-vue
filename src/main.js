@@ -4,6 +4,7 @@ import { VueQueryPlugin, QueryClient } from '@tanstack/vue-query'
 import './style.css'
 import App from './App.vue'
 import router from './router'
+import { vClickOutside } from './directives/vClickOutside'
 
 const app = createApp(App)
 
@@ -21,5 +22,7 @@ const queryClient = new QueryClient({
 app.use(VueQueryPlugin, { queryClient })
 app.use(createPinia())
 app.use(router)
+// Registering the directive
+app.directive('click-outside', vClickOutside)
 
 app.mount('#app')
