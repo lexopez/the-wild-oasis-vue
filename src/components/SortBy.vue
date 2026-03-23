@@ -14,7 +14,7 @@ const route = useRoute()
 const router = useRouter()
 
 // 1. Get the current 'sortBy' value from the URL
-const sortBy = computed(() => route.query.sortBy || 'startDate-desc')
+const sortBy = computed(() => route.query.sortBy || '')
 
 // 2. Update the URL when the select value changes
 function handleChange(value) {
