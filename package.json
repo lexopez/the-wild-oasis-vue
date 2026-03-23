@@ -26,10 +26,12 @@
     "lucide-vue-next": "^0.577.0",
     "pinia": "^3.0.4",
     "recharts": "^3.8.0",
+    "vee-validate": "^4.15.1",
     "vue": "^3.5.29",
     "vue-echarts": "^8.0.1",
     "vue-router": "^5.0.3",
-    "vue-sonner": "^2.0.9"
+    "vue-sonner": "^2.0.9",
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

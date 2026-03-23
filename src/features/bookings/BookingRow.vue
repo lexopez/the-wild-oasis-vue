@@ -2,7 +2,7 @@
 import { format, isToday } from 'date-fns'
 import { formatDistanceFromNow, formatCurrency } from '@/utils/helpers'
 import StatusTag from '@/components/StatusTag.vue'
-import { computed, inject, ref } from 'vue'
+import { computed, ref } from 'vue'
 import AppModal from '@/components/AppModal.vue'
 import MenusToggle from '@/components/MenusToggle.vue'
 import MenusButton from '@/components/MenusButton.vue'

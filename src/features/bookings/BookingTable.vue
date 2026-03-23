@@ -9,12 +9,14 @@ import DataTableFooter from '@/components/DataTableFooter.vue'
 import BookingRow from './BookingRow.vue'
 import AppMenus from '@/components/AppMenus.vue'
 import DataTablePagination from '@/components/DataTablePagination.vue'
+import EmptyData from '@/components/EmptyData.vue'
 
-const { isLoading, bookings, count, error } = useBookings()
+const { isLoading, bookings, count } = useBookings()
 </script>
 
 <template>
   <AppSpinner v-if="isLoading" />
+  <EmptyData v-else-if="!bookings.length" resource-name="bookings" />
   <AppMenus v-else>
     <DataTable columns="0.6fr 2fr 2.4fr 1.4fr 1fr 3.2rem">
       <DataTableHeader>

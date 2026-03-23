@@ -22,9 +22,7 @@ const currentFilter = computed(() => {
 
 function handleClick(value) {
   // Create a new query object based on existing params
-  console.log(route.query)
   const query = { ...route.query, [props.filterField]: value }
-  console.log(query)
 
   // If there is a "page" param, reset it to 1 just like in your React code
   if (route.query.page) query.page = 1

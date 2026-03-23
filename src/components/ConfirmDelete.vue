@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { inject } from 'vue'
 import AppHeading from './AppHeading.vue'
 import SharedButton from './SharedButton.vue'
