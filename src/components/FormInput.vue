@@ -1,7 +1,6 @@
 <script setup>
 // This automatically handles the 'modelValue' prop and 'update:modelValue' event
 const model = defineModel()
-
 defineOptions({
   inheritAttrs: false,
 })

@@ -5,7 +5,7 @@ import { toast } from 'vue-sonner'
 export function useEditCabin() {
   const queryClient = useQueryClient()
 
-  const { mutate: editCabin, isLoading: isEditing } = useMutation({
+  const { mutate: editCabin, isPending: isEditing } = useMutation({
     mutationFn: ({ newCabinData }) => createEditCabin(newCabinData),
     onSuccess: () => {
       toast.success('Cabin successfully edited')

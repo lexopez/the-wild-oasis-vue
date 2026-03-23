@@ -144,8 +144,16 @@ const onSubmit = handleSubmit((values) => {
 
     <FormRow>
       <SharedButton variation="secondary" type="reset" @click="close"> Cancel </SharedButton>
-      <SharedButton :disabled="isWorking">
-        {{ isEditSession ? 'Edit cabin' : 'Create new cabins' }}
+      <SharedButton :disabled="isCreating || isEditing">
+        {{
+          isEditSession
+            ? isEditing
+              ? 'Updating...'
+              : 'Edit cabin'
+            : isCreating
+              ? 'Creating...'
+              : 'Create new cabins'
+        }}
       </SharedButton>
     </FormRow>
   </MainForm>
