@@ -1,3 +1,7 @@
+<script setup>
+import CheckinBooking from '@/features/check-in-out/CheckinBooking.vue'
+</script>
+
 <template>
-  <h1>check in</h1>
+  <CheckinBooking />
 </template>
