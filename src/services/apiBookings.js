@@ -1,6 +1,7 @@
 import { getToday } from '@/utils/helpers'
 import supabase from './supabase'
 import { PAGE_SIZE } from '@/utils/constants'
+import { isToday } from 'date-fns'
 
 export async function getBookings({ filter, sortBy, page }) {
   let query = supabase
@@ -34,6 +35,32 @@ export async function getBookings({ filter, sortBy, page }) {
 
   return { data, count }
 }
+
+export async function getBooking(id) {
+  const { data, error } = await supabase
+    .from('bookings')
+    .select('*, cabins(*), guests(*)')
+    .eq('id', id)
+    .single()
+
+  if (error) {
+    console.error(error)
+    throw new Error('Booking not found')
+  }
+
+  return data
+}
+
+export async function updateBooking(id, obj) {
+  const { data, error } = await supabase.from('bookings').update(obj).eq('id', id).select().single()
+
+  if (error) {
+    console.error(error)
+    throw new Error('Booking could not be updated')
+  }
+  return data
+}
+
 export async function getBookingsAfterDate(date) {
   const { data, error } = await supabase
     .from('bookings')

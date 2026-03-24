@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import BookingDetail from '@/features/bookings/BookingDetail.vue'
+</script>
+
 <template>
-  <h1>booking details</h1>
+  <BookingDetail />
 </template>
