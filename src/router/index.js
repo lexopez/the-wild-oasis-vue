@@ -85,7 +85,6 @@ router.beforeEach(async (to) => {
           query: { redirect: to.fullPath },
         }
       }
-
       // If user exists, we don't need to return anything
       // (returning undefined or true allows the navigation)
     } catch (err) {

@@ -1,10 +1,11 @@
 import { useMutation, useQueryClient } from '@tanstack/vue-query'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { toast } from 'vue-sonner' // Using Vue Sonner as previously discussed
 import { login as loginApi } from '@/services/apiAuth'
 
 export function useLogin() {
   const queryClient = useQueryClient()
+  const route = useRoute()
   const router = useRouter()
 
   const { mutate: login, isPending: isLoading } = useMutation({
@@ -15,8 +16,10 @@ export function useLogin() {
       queryClient.setQueryData(['user'], user.user)
 
       // Navigate to dashboard and replace history (redirect)
-      router.replace('/dashboard')
+      // router.replace('/dashboard')
       // Or simply: router.replace('/dashboard');
+      const destination = route.query.redirect || '/dashboard'
+      router.push(destination)
     },
 
     onError: (err) => {
