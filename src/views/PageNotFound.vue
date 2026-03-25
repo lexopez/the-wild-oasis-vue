@@ -1,7 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router'
-import Heading from '@/components/Heading.vue'
 import SharedButton from '@/components/SharedButton.vue'
+import AppHeading from '@/components/AppHeading.vue'
 
 const router = useRouter()
 
@@ -14,7 +14,7 @@ const moveBack = () => {
 <template>
   <main class="styled-page-not-found">
     <div class="box">
-      <Heading as="h1"> The page you are looking for could not be found 😢 </Heading>
+      <AppHeading as="h1"> The page you are looking for could not be found 😢 </AppHeading>
 
       <SharedButton size="large" @click="moveBack"> &larr; Go back </SharedButton>
     </div>
