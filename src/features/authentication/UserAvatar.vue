@@ -1,7 +1,18 @@
+<script setup>
+import { computed } from 'vue'
+import { useUser } from './useUser'
+
+const { user } = useUser()
+const userInfo = computed(() => user.value.user_metadata)
+</script>
 <template>
-  <div class="user-avatar">
-    <img src="/default-user.jpg" alt="avatar" class="avatar" />
-    <span>username</span>
+  <div class="user-avatar" v-if="user">
+    <img
+      :src="`${userInfo.avatar ? userInfo.avatar : '/default-user.jpg'}`"
+      :alt="`Avatar of ${userInfo.fullName}`"
+      class="avatar"
+    />
+    <span>{{ userInfo.fullName }}</span>
   </div>
 </template>
 

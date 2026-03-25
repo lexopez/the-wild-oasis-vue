@@ -3,6 +3,8 @@ import { VueQueryDevtools } from '@tanstack/vue-query-devtools'
 import { RouterView } from 'vue-router'
 import { Toaster } from 'vue-sonner'
 import 'vue-sonner/style.css'
+import { useDarkMode } from './composable/useDarkMode'
+useDarkMode()
 </script>
 
 <template>
